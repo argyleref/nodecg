@@ -12,6 +12,7 @@ os:
 install:
   - test $TRAVIS_OS_NAME = "osx" && brew update && brew install nvm && source $(brew --prefix nvm)/nvm.sh || test $TRAVIS_OS_NAME = "linux"
   - nvm install $NODE_VERSION
+  - nvm use $NODE_VERSION
   - node --version
   - npm --version
   - npm install
@@ -34,5 +35,4 @@ notifications:
     on_success: always
     on_failure: always
     on_start: false
-  slack:
-    secure: R+TkavWRhREwc9shV6JYJ+YrrMdpaSB5iYlVVhtO4XjSJPtbsgFvg8aelELIfwUY/Lsl6dmUD8bhv1GxN4Bdui7igrGEzXqh+ziJSnPET0Apxyc2HFYzM3phQYwsESyFXGfx9PiegLQ6fcozZ75rio17YhPjT8//9jb5I9hue9g=
+
